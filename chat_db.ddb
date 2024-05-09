@@ -1,0 +1,334 @@
+{
+  "author": "Unnamed",
+  "title": "Chat_db",
+  "date": "2024-05-04T23:50:34.180Z",
+  "tables": [
+    {
+      "id": 0,
+      "name": "User",
+      "x": 78.40499999999997,
+      "y": -7.562500000000028,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "name",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 1
+        },
+        {
+          "name": "username",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": 1
+        },
+        {
+          "name": "password",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": 1
+        },
+        {
+          "name": "email",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": 4,
+          "size": 1
+        },
+        {
+          "name": "photo",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 5,
+          "size": 255
+        },
+        {
+          "name": "birth_date",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 6,
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1714862785630
+    },
+    {
+      "id": 1,
+      "name": "Chat",
+      "x": 444.42999999999995,
+      "y": 316.2125,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "chat_name",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 1
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1714862860030
+    },
+    {
+      "id": 2,
+      "name": "Message",
+      "x": 617.5675,
+      "y": 14.819999999999936,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "author",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "chat_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2
+        },
+        {
+          "name": "content",
+          "type": "JSON",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "time_create",
+          "type": "TIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 4,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "time_edit",
+          "type": "TIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 5,
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1714862890841
+    },
+    {
+      "id": 3,
+      "name": "Chat_User",
+      "x": 64.46749999999997,
+      "y": 319.51,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "chat_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1714862952804
+    }
+  ],
+  "relationships": [
+    {
+      "startTableId": 1,
+      "startFieldId": 0,
+      "endTableId": 3,
+      "endFieldId": 1,
+      "cardinality": "One to many",
+      "updateConstraint": "Restrict",
+      "deleteConstraint": "Cascade",
+      "name": "Chat_id_fk",
+      "id": 0
+    },
+    {
+      "startTableId": 3,
+      "startFieldId": 2,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "One to many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "Set null",
+      "name": "Chat_User_user_id_fk",
+      "id": 1
+    },
+    {
+      "startTableId": 2,
+      "startFieldId": 1,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "One to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "Message_author_fk",
+      "id": 2
+    },
+    {
+      "startTableId": 2,
+      "startFieldId": 2,
+      "endTableId": 1,
+      "endFieldId": 0,
+      "cardinality": "Many to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "Message_chat_fk",
+      "id": 3
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "types": []
+}
