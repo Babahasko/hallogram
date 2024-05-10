@@ -19,6 +19,8 @@ a:hover {
     color:#00a74f;
 }
 
+
+
 h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
 
 h1 {
@@ -74,6 +76,24 @@ ol {
 #header a:hover {
     color:#fff;
 }
+
+#header form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+#header .link-button {
+    background-color: transparent;
+    color:#f3f7cc;
+    border: none;
+    cursor: pointer; /* Изменение формы курсора при наведении */
+}
+
+#header .link-button:hover {
+    color:#fff;
+}
+
 
 #header .user {
     float:right;
