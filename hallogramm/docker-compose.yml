@@ -1,9 +1,21 @@
+version: '3.9'
 services:
   db:
-    image: postgres:14
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
+    container_name: pg
+    image: postgres:latest
+    command: postgres -c 'max_connections=500'
+    restart: unless-stopped
     environment:
-      - "POSTGRES_HOST_AUTH_METHOD=trust"
-volumes:
-  postgres_data:
+      POSTGRES_MULTIPLE_DATABASES: hallogramm_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+        - 5431:5431
+    volumes:
+        - './data/databases/postgres:/var/lib/postgresql/data'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      start_period: 5s
+      interval: 3s
+      retries: 10
+      timeout: 30s
