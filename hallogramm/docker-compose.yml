@@ -6,11 +6,11 @@ services:
     command: postgres -c 'max_connections=500'
     restart: unless-stopped
     environment:
-      POSTGRES_MULTIPLE_DATABASES: hallogramm_db
+      POSTGRES_DB: hallogramm_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-        - 5431:5431
+        - 5431:5432
     volumes:
         - './data/databases/postgres:/var/lib/postgresql/data'
     healthcheck:
