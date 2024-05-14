@@ -40,7 +40,6 @@ hallogramm_data.json
 # File-based project format
 *.iws
 hallogramm/data/
-data/
 
 # IntelliJ
 out/
