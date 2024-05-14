@@ -4,8 +4,9 @@ from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector
 
-from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
+from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm, SearchForm
 from .models import Profile
 
 
@@ -49,3 +50,23 @@ def edit(request):
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
     return render(request, 'account/edit.html', {'user_form': user_form, 'profile_form': profile_form})
+
+
+def contacts_search(request):
+    form = SearchForm()
+    query = None
+    results = []
+
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Profile.objects.annotate(
+                search=SearchVector('user__username', 'user__first_name', 'user__last_name'),
+            ).filter(search=query)
+    return render(request,
+                  'account/search.html',
+                  {'form': form,
+                           'query': query,
+                           'results': results})
+

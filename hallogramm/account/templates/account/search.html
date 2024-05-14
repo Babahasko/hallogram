@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+    {% if query %}
+    <h1>Найденные друзья с именем "{{ query }}"</h1>
+    <h3>
+        {% with results.count as total_results %}
+        Found {{ total_results }} result{{ total_results|pluralize }}
+        {% endwith %}
+    </h3>
+        {% for profile in results %}
+        <h4>{{ profile.username }}</h4>
+        {% empty %}
+        <p>There are no results for your query.</p>
+        {% endfor %}
+        <p><a href="{% url 'contacts_search' %}">Search again</a></p>
+    {% else %}
+        <h1>Search for friends</h1>
+        <form method="get">
+        {{ form.as_p }}
+        <input type="submit" value="Search">
+        </form>
+    {% endif %}
+{% endblock %}
