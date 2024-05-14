@@ -4,6 +4,19 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/hallogramm" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/base/16384" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_commit_ts" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_dynshmem" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_logical/mappings" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_logical/snapshots" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_notify" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_replslot" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_serial" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_snapshots" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_stat_tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_tblspc" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_twophase" />
+      <excludeFolder url="file://$MODULE_DIR$/hallogramm/data/databases/postgres/pg_wal/archive_status" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
