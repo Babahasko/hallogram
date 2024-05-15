@@ -52,7 +52,7 @@ def edit(request):
     return render(request, 'account/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
 
-def contacts_search(request):
+def search(request):
     form = SearchForm()
     query = None
     results = []
@@ -69,5 +69,5 @@ def contacts_search(request):
                   {'form': form,
                            'query': query,
                            'results': results,
-                           'section': 'contacts_search'})
+                           'section': 'search'})
 

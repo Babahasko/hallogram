@@ -13,11 +13,11 @@
         <li {% if section == "dashboard" %}class="selected"{% endif %}>
           <a href="{% url "dashboard" %}">My dashboard</a>
         </li>
-        <li {% if section == "contacts_search" %}class="selected"{% endif %}>
-          <a href="{% url 'contacts_search' %}">Search</a>
+        <li {% if section == "search" %}class="selected"{% endif %}>
+          <a href="{% url 'search' %}">Search</a>
         </li>
-        <li {% if section == "people" %}class="selected"{% endif %}>
-          <a href="#">People</a>
+        <li {% if section == "contacts" %}class="selected"{% endif %}>
+          <a href="#">Contacts</a>
         </li>
       </ul>
     {% endif %}
