@@ -68,5 +68,6 @@ def contacts_search(request):
                   'account/search.html',
                   {'form': form,
                            'query': query,
-                           'results': results})
+                           'results': results,
+                           'section': 'contacts_search'})
 
