@@ -49,7 +49,15 @@ class UserEditForm(forms.ModelForm):
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['date_of_birth', 'photo', 'status']
+        fields = ['date_of_birth', 'photo', 'status', 'slug']
+
+    def clean_slug(self):
+        data = self.cleaned_data['slug']
+        qs = Profile.objects.exclude(id=self.instance.id) \
+            .filter(slug=data)
+        if qs.exists():
+            raise forms.ValidationError(' slug already in use.')
+        return data
 
 
 class SearchForm(forms.Form):
