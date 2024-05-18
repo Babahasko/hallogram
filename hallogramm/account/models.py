@@ -2,6 +2,8 @@ from django.db import models
 from django.conf import settings
 import uuid
 
+from django.urls import reverse, reverse_lazy
+
 
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -13,4 +15,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'Profile of {self.user.username}'
+
+    def get_absolute_url(self):
+        return reverse_lazy(viewname='profile', kwargs={'profile_uuid': self.uuid})
 # Create your models here.

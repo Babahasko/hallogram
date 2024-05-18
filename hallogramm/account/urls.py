@@ -16,4 +16,5 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),
     path('search/', views.search, name='search'),
+    path('profile/<uuid:profile_uuid>/', views.ProfileDetailView.as_view(), name='profile'),
 ]
