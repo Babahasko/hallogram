@@ -9,11 +9,10 @@
 </head>
 <body>
   <div id="header">
-    <span class="logo">Bookmarks</span>
     {% if request.user.is_authenticated %}
       <ul class="menu">
-        <li {% if section == "dashboard" %}class="selected"{% endif %}>
-          <a href="{% url "dashboard" %}">My dashboard</a>
+        <li {% if section == "account_profile" %}class="selected"{% endif %}>
+          <a href="{% url "account_profile" %}">My Profile</a>
         </li>
         <li {% if section == "search" %}class="selected"{% endif %}>
           <a href="{% url 'search' %}">Search</a>

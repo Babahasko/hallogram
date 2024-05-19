@@ -14,10 +14,10 @@ from .models import Profile
 
 
 @login_required
-def dashboard(request):
+def account_profile(request):
     return render(request,
-                  'account/dashboard.html',
-                  {'section': 'dashboard'})
+                  'account/account_profile.html',
+                  {'section': 'account_profile'})
 
 
 def register(request):
@@ -77,7 +77,7 @@ def search(request):
 
 class ProfileDetailView(DetailView):
     model = Profile
-    template_name = 'account/profile.html'
+    template_name = 'account/search_profile.html'
     context_object_name = 'profile'
     slug_url_kwarg = 'profile_uuid'
 
