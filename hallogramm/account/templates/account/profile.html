@@ -1,7 +1,40 @@
 {% extends "base.html" %}
-{% block title %}Edit your account{% endblock %}
+{% block title %}Profile{% endblock %}
 {% block content %}
-<h1>Профиль пользователя</h1>
-<h2>{{ profile.username }}</h2>
-<h2>{{ profile.slug }}</h2>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Profile Picture -->
+        <div class="col-md-4">
+            <div class="card">
+                {% if profile.photo %}
+                <p><img src="{{ profile.photo.url }}" class="card-img-top" alt="аватар"></p>
+                {% else %}
+                <p><img src="{{ default_image }}" class="card-img-top" alt="аватар"></p>
+                {% endif %}
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ник: {{ profile.user.username }}</h5>
+                    <p class="card-text">E-mail: {{ profile.user.email }}</p>
+                    {% if profile.status %}
+                    <p class="card-text">{{ profile.status }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- User Details -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Profile Details</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">About</h5>
+                    <p class="card-text">Имя: {{ profile.user.first_name }}</p>
+                    <p class="card-text">Фамилия: {{ profile.user.last_name }}</p>
+                    <p class="card-text">Последний раз на сайте: {{ profile.user.last_login }}</p>
+                    <p class="card-text">С нами с: {{ profile.user.date_joined }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
