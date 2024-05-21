@@ -18,4 +18,3 @@ class Profile(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy(viewname='profile', kwargs={'profile_uuid': self.uuid})
-# Create your models here.
